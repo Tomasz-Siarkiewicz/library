@@ -1,20 +1,21 @@
 package org.library.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
 @Entity
-public record Book(
-        @Id
-        @GeneratedValue
-        long id,
-        String title,
-        Author author,
-        LocalDate releaseDate,
-        Genre genre,
-        String description
-) {
+public class Book {
+    @Id
+    @GeneratedValue
+    private long id;
+    private String title;
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Author author;
+    private LocalDate releaseDate;
+    @ManyToOne
+    @JoinColumn(name = "genre_id")
+    private Genre genre;
+    private String description;
 }

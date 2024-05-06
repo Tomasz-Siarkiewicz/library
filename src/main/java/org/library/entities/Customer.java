@@ -1,20 +1,21 @@
 package org.library.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
+
 @Entity
-public record Customer(
-        @Id
-        @GeneratedValue
-        long id,
-        String firstname,
-        String middleName,
-        String lastName,
-        LocalDate registerDate,
-        LibraryCard libraryCard,
-        String idDocumentNumber
-) {
+public class Customer {
+    @Id
+    @GeneratedValue
+    private long id;
+    private String firstname;
+    private String middleName;
+    private String lastName;
+    private LocalDate registerDate;
+    @OneToOne
+    @JoinColumn (name = "card_id")
+    private LibraryCard libraryCard;
+    private String idDocumentNumber;
+
 }

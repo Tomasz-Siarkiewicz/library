@@ -5,10 +5,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-public record Genre(
+public class Genre {
         @Id
         @GeneratedValue
-        long id,
-        String name
-) {
+        long id;
+        String name;
 }

@@ -6,14 +6,15 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 import java.util.List;
+import java.util.Objects;
 
 @Entity
-public record Author(
-        @Id
-        @GeneratedValue
-        long id,
-        String name,
-        @ElementCollection
-        List<Genre> genres
-) {
+public final class Author {
+    @Id
+    @GeneratedValue
+    private  long id;
+    private  String name;
+    @ElementCollection
+    private  List<Genre> genres;
+
 }

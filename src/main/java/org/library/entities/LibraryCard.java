@@ -4,8 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public record LibraryCard(
+public class LibraryCard{
         @Id
-        long number
-) {
+        private long number;
 }

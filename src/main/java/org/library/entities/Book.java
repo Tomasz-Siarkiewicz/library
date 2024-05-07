@@ -17,5 +17,17 @@ public class Book {
     @ManyToOne
     @JoinColumn(name = "genre_id")
     private Genre genre;
+    @Column(length = 1000)
     private String description;
+
+    public Book() {
+    }
+
+    public Book(String title, Author author, LocalDate releaseDate, Genre genre, String description) {
+        this.title = title;
+        this.author = author;
+        this.releaseDate = releaseDate;
+        this.genre = genre;
+        this.description = description;
+    }
 }

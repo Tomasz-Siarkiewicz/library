@@ -1,13 +1,23 @@
 package org.library.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 public class Genre {
-        @Id
-        @GeneratedValue
-        long id;
-        String name;
+    @Id
+    @GeneratedValue
+    long id;
+    @Column(length = 50)
+    String name;
+    @ManyToMany(mappedBy = "genres")
+    private List<Author> authors;
+
+    public Genre(String name) {
+        this.name = name;
+    }
+
+    public Genre() {
+    }
 }

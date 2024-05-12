@@ -22,4 +22,8 @@ public final class Author {
 
     public Author() {
     }
+
+    public String getName() {
+        return name;
+    }
 }

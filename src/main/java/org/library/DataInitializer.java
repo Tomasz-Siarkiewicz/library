@@ -47,19 +47,31 @@ public class DataInitializer {
     Author sapkowski = new Author("Andrzej Sapkowski", List.of(fantasy));
 
 
-
     @EventListener(ApplicationReadyEvent.class)
     void save() {
-        customerService.saveCustomer("imie", "nazwisko", "sdsdfsf4ff");
-        customerService.saveCustomer("imie", "nazwisko", "sdsdfsf4ff");
-        customerService.saveCustomer("imie", "nazwisko", "sdsdfsf4ff");
-        customerService.saveCustomer("imie", "nazwisko", "sdsdfsf4ff");
+
         genreRepository.saveAll(List.of(scifi, fantasy, powiescHistoryczna, thriller, powiesc, horror));
         authorRepository.saveAll(List.of(grzedowicz, pilipiuk, mroz, ziemianski, kossakowska, piekara, mortka, lem, sapkowski));
         bookRepository.saveAll(generateBooks());
+        saveCustomers();
     }
-    private List<Book> generateBooks(){
-        return  List.of(
+
+    private void saveCustomers() {
+        customerService.saveCustomer("Jan", "Kowalski", "sdsdfsf4ff1");
+        customerService.saveCustomer("Anna", "Nowak", "sdsdfsf4ff2");
+        customerService.saveCustomer("Piotr", "Zieliński", "sdsdfsf4ff3");
+        customerService.saveCustomer("Katarzyna", "Wójcik", "sdsdfsf4ff4");
+        customerService.saveCustomer("Michał", "Szymański", "sdsdfsf4ff5");
+        customerService.saveCustomer("Agnieszka", "Woźniak", "sdsdfsf4ff6");
+        customerService.saveCustomer("Tomasz", "Kozłowski", "sdsdfsf4ff7");
+        customerService.saveCustomer("Małgorzata", "Jankowski", "sdsdfsf4ff8");
+        customerService.saveCustomer("Paweł", "Włodarczyk", "sdsdfsf4ff9");
+        customerService.saveCustomer("Ewa", "Kwiatkowski", "sdsdfsf4ff10");
+    }
+
+
+    private List<Book> generateBooks() {
+        return List.of(
                 new Book("Pan lodowego Ogrodu tom 1", grzedowicz, LocalDate.of(2012, 11, 13), fantasy, " Majstersztyk literatury fantasy. Grzędowicz stworzył pełnokrwistych bohaterów i realistyczny świat. Wciągająca opowieść o Vuko Drakkainenie, który wyrusza na niebezpieczną misję"),
                 new Book("Pan lodowego Ogrodu tom 2", grzedowicz, LocalDate.of(2012, 12, 24), fantasy, "Kontynuacja przygód Vuko, choć tempo akcji zwalnia. Świat wykreowany staje się mniej zaskakujący niż przy pierwszym spotkaniu"),
                 new Book("Pan lodowego Ogrodu tom 3", grzedowicz, LocalDate.of(2013, 1, 1), fantasy, " Powrót do znanego świata z poprzednich części. Wciągająca opowieść, która nie wypuści czytelnika"),

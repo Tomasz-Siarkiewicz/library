@@ -30,4 +30,28 @@ public class Book {
         this.genre = genre;
         this.description = description;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Author getAuthor() {
+        return author;
+    }
+
+    public LocalDate getReleaseDate() {
+        return releaseDate;
+    }
+
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }

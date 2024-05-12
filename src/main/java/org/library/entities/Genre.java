@@ -20,4 +20,8 @@ public class Genre {
 
     public Genre() {
     }
+
+    public String getName() {
+        return name;
+    }
 }

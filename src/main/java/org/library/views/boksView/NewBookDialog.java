@@ -1,13 +1,11 @@
 package org.library.views.boksView;
 
-import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.dialog.Dialog;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
-import com.vaadin.flow.component.page.Page;
 import com.vaadin.flow.component.textfield.TextField;
 import org.library.entities.Author;
 import org.library.entities.Book;
@@ -15,8 +13,6 @@ import org.library.entities.Genre;
 import org.library.services.AuthorService;
 import org.library.services.BookService;
 import org.library.services.GenreService;
-
-import java.time.LocalDate;
 
 public class NewBookDialog extends Dialog {
     private final AuthorService authorService;
@@ -64,11 +60,11 @@ public class NewBookDialog extends Dialog {
 
     private boolean valid() {
         if (
-                title.getValue() == null ||
-                author.getValue() == null ||
-                releaseDate.getValue() == null ||
-                genre.getValue() == null ||
-                description.getValue() == null
+                (title.getValue() == null || title.getValue().isEmpty()) ||
+                        author.getValue() == null ||
+                        releaseDate.getValue() == null ||
+                        genre.getValue() == null ||
+                        (description.getValue() == null || description.isEmpty())
         ) {
             return false;
         }

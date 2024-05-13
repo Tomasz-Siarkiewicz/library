@@ -38,7 +38,7 @@ public class BooksView extends VerticalLayout {
         bookGrid.addColumn(Book::getTitle).setHeader("Tytuł");
         bookGrid.addColumn(book -> book.getAuthor().getName()).setHeader("Autor");
         bookGrid.addColumn(Book::getReleaseDate).setHeader("Data Wydania");
-        List<Book> all = bookService.getAll();
+        List<Book> all = bookService.findAll();
         bookGrid.setItems(all);
         bookGrid.asSingleSelect().addValueChangeListener(e -> {
                     bookInfo.setSelected(e.getValue());

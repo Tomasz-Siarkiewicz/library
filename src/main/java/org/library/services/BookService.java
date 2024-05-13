@@ -14,11 +14,12 @@ public class BookService {
         this.bookRepository = bookRepository;
     }
 
-    public List<Book> getAll(){
+    public List<Book> findAll(){
         return bookRepository.findAll();
     }
 
     public void save(Book book) {
         bookRepository.save(book);
     }
+
 }

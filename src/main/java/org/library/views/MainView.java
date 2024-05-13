@@ -20,7 +20,7 @@ public class MainView extends AppLayout {
         createDrawer();
     }
     private void createHeader() {
-        H1 logo = new H1("Library");
+        H1 logo = new H1("Biblioteka");
         logo.addClassNames(
                 LumoUtility.FontSize.LARGE,
                 LumoUtility.Margin.MEDIUM);
@@ -39,8 +39,8 @@ public class MainView extends AppLayout {
 
     private void createDrawer() {
         addToDrawer(new VerticalLayout(
-                new RouterLink("Books", BooksView.class),
-                new RouterLink("Authors", AuthorsView.class)
+                new RouterLink("Książki", BooksView.class),
+                new RouterLink("Autorzy", AuthorsView.class)
         ));
     }
 }

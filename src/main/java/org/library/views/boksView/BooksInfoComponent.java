@@ -29,10 +29,12 @@ public class BooksInfoComponent extends VerticalLayout {
     public void setSelected(Book book) {
         selected = book;
         removeAll();
-        add(new H1(this.selected.getTitle()));
-        add(new H2(this.selected.getAuthor().getName()));
-        add(new H3(this.selected.getDescription()));
-        add(deleteButton);
+        if (book != null) {
+            add(new H1(this.selected.getTitle()));
+            add(new H2(this.selected.getAuthor().getName()));
+            add(new H3(this.selected.getDescription()));
+            add(deleteButton);
+        }
     }
 
     private void delete() {

@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-public final class Author {
+public final class Author{
     @Id
     @GeneratedValue
     private long id;
@@ -44,4 +44,5 @@ public final class Author {
     public List<Genre> getGenres() {
         return genres;
     }
+
 }

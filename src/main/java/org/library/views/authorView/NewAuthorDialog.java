@@ -38,7 +38,7 @@ public class NewAuthorDialog extends Dialog {
     }
 
     private void save() {
-        if (valid()){
+        if (valid()) {
             Author author = new Author(authorName.getValue(), genres.getValue());
             authorService.save(author);
             clearForm();
@@ -52,15 +52,11 @@ public class NewAuthorDialog extends Dialog {
         genres.setItems(genres.getEmptyValue());
     }
 
-    private boolean valid(){
-        if (
-                (authorName.isEmpty() || authorName.getValue() == null) ||
-                        (genres.isEmpty() || genres.getValue() == null)
-        ){
-            return false;
-        }
-        return true;
+    private boolean valid() {
+        return (!authorName.isEmpty() && authorName.getValue() != null) &&
+                (!genres.isEmpty() && genres.getValue() != null);
     }
+
     private FormLayout configureForm() {
         FormLayout formLayout = new FormLayout();
         formLayout.add(

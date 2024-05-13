@@ -13,7 +13,8 @@ public class GenreService {
     public GenreService(GenreRepository genreRepository) {
         this.genreRepository = genreRepository;
     }
-    public List<Genre> findAll(){
+
+    public List<Genre> findAll() {
         return genreRepository.findAll();
     }
 }

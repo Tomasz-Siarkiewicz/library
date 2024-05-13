@@ -54,15 +54,4 @@ public class Book {
     public String getDescription() {
         return description;
     }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "title='" + title + '\'' +
-                ", author=" + author +
-                ", releaseDate=" + releaseDate +
-                ", genre=" + genre +
-                ", description='" + description + '\'' +
-                '}';
-    }
 }

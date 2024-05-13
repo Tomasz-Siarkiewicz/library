@@ -19,11 +19,11 @@ public class NewBookDialog extends Dialog {
     private final GenreService genreService;
     private final BookService bookService;
     private FormLayout form;
-    TextField title = new TextField("Tytuł");
-    DatePicker releaseDate = new DatePicker("Data wydania");
-    TextField description = new TextField("Opis");
-    ComboBox<Author> author;
-    ComboBox<Genre> genre;
+    private TextField title = new TextField("Tytuł");
+    private DatePicker releaseDate = new DatePicker("Data wydania");
+    private TextField description = new TextField("Opis");
+    private ComboBox<Author> author;
+    private ComboBox<Genre> genre;
 
     Button save = new Button("Zapisz");
     Button close = new Button("Anuluj");
@@ -38,7 +38,6 @@ public class NewBookDialog extends Dialog {
         form = createForm();
         this.setHeaderTitle("Dodaj Książkę");
         this.add(form);
-
         this.add(createButtonLayout());
     }
 

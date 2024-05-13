@@ -1,17 +1,13 @@
 package org.library.entities;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
-import org.hibernate.annotations.FetchProfile;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Set;
 
 @Entity
-public final class Author{
+public final class Author {
     @Id
     @GeneratedValue
     private long id;

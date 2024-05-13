@@ -19,13 +19,14 @@ public class MainView extends AppLayout {
         createHeader();
         createDrawer();
     }
+
     private void createHeader() {
         H1 logo = new H1("Biblioteka");
         logo.addClassNames(
                 LumoUtility.FontSize.LARGE,
                 LumoUtility.Margin.MEDIUM);
 
-        var header = new HorizontalLayout(new DrawerToggle(), logo );
+        var header = new HorizontalLayout(new DrawerToggle(), logo);
 
         header.setDefaultVerticalComponentAlignment(FlexComponent.Alignment.CENTER);
         header.setWidthFull();

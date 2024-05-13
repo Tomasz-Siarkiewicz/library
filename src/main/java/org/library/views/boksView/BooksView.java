@@ -25,7 +25,7 @@ public class BooksView extends VerticalLayout {
 
     public BooksView(BookService bookService, AuthorService authorService, GenreService genreService) {
         this.bookService = bookService;
-        newBookDialog = new NewBookDialog(authorService, genreService);
+        newBookDialog = new NewBookDialog(authorService, genreService, bookService);
         configureGrid();
         add(bookGrid);
         add(new Button("Dodaj książkę", e -> newBookDialog.open()));

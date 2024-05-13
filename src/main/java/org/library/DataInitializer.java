@@ -6,7 +6,6 @@ import org.library.entities.Genre;
 import org.library.repositories.AuthorRepository;
 import org.library.repositories.BookRepository;
 import org.library.repositories.GenreRepository;
-import org.library.services.CustomerService;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
@@ -20,13 +19,11 @@ public class DataInitializer {
     private final AuthorRepository authorRepository;
     private final GenreRepository genreRepository;
     private final BookRepository bookRepository;
-    private final CustomerService customerService;
 
-    public DataInitializer(AuthorRepository authorRepository, GenreRepository genreRepository, BookRepository bookRepository, CustomerService customerService) {
+    public DataInitializer(AuthorRepository authorRepository, GenreRepository genreRepository, BookRepository bookRepository) {
         this.authorRepository = authorRepository;
         this.genreRepository = genreRepository;
         this.bookRepository = bookRepository;
-        this.customerService = customerService;
     }
 
     Genre scifi = new Genre("Science Fiction");
@@ -53,20 +50,6 @@ public class DataInitializer {
         genreRepository.saveAll(List.of(scifi, fantasy, powiescHistoryczna, thriller, powiesc, horror));
         authorRepository.saveAll(List.of(grzedowicz, pilipiuk, mroz, ziemianski, kossakowska, piekara, mortka, lem, sapkowski));
         bookRepository.saveAll(generateBooks());
-        saveCustomers();
-    }
-
-    private void saveCustomers() {
-        customerService.saveCustomer("Jan", "Kowalski", "sdsdfsf4ff1");
-        customerService.saveCustomer("Anna", "Nowak", "sdsdfsf4ff2");
-        customerService.saveCustomer("Piotr", "Zieliński", "sdsdfsf4ff3");
-        customerService.saveCustomer("Katarzyna", "Wójcik", "sdsdfsf4ff4");
-        customerService.saveCustomer("Michał", "Szymański", "sdsdfsf4ff5");
-        customerService.saveCustomer("Agnieszka", "Woźniak", "sdsdfsf4ff6");
-        customerService.saveCustomer("Tomasz", "Kozłowski", "sdsdfsf4ff7");
-        customerService.saveCustomer("Małgorzata", "Jankowski", "sdsdfsf4ff8");
-        customerService.saveCustomer("Paweł", "Włodarczyk", "sdsdfsf4ff9");
-        customerService.saveCustomer("Ewa", "Kwiatkowski", "sdsdfsf4ff10");
     }
 
 

@@ -48,6 +48,6 @@ public class BooksView extends VerticalLayout {
     }
 
     private void createBookInfo(Book book) {
-        bookInfo = new BooksInfoComponent(book);
+        bookInfo = new BooksInfoComponent(book, bookService);
     }
 }

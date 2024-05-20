@@ -34,7 +34,6 @@ public class AuthorsView extends VerticalLayout {
         authorGrid.addColumn(AuthorDTO::name);
         authorGrid.addColumn(AuthorDTO::genres);
         List<AuthorDTO> authors = authorService.findAllForView();
-        System.out.println(authors.size());
         authorGrid.setItems(authors);
     }
 }
